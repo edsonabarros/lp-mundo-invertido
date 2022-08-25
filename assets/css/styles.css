@@ -48,12 +48,12 @@
 .dark-theme button,
 .dark-theme h1,
 .dark-theme h2,
-.dark-theme h3{
+.dark-theme h3 {
   letter-spacing: 5px;
   font-weight: normal;
 }
 
-.dark-theme .invert-element{
+.dark-theme .invert-element {
   transform: rotateZ(180deg) scaleX(-1);
 }
 
@@ -94,12 +94,12 @@ label {
 
 
 
-label{
+label {
   margin-bottom: 8px;
 }
 
-input:focus-visible, 
-textarea:focus-visible{
+input:focus-visible,
+textarea:focus-visible {
   outline: none;
   border-color: black;
 }
@@ -117,7 +117,7 @@ button {
 
 input,
 textarea {
-  border:  2px solid var(--primary-color-contrast);
+  border: 2px solid var(--primary-color-contrast);
   background-color: var(--field-background-color);
   color: var(--primary-color-contrast);
   padding: 8px;
@@ -211,14 +211,16 @@ main {
   align-items: center;
 }
 
-main::before{
+main::before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  background: var(--page-background) no-repeat, /* gradeinte */
-  url(../images/backgrounds/florest.png) no-repeat; /* img */
-  background-size: cover; 
+  background: var(--page-background) no-repeat,
+    /* gradeinte */
+    url(../images/backgrounds/florest.png) no-repeat;
+  /* img */
+  background-size: cover;
   z-index: -1;
 }
 
@@ -244,6 +246,27 @@ section {
   max-width: 300px;
 }
 
+@media (max-width: 768px) {
+  #section-inverted-world {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #section-inverted-world .section-texts {
+    width: 70%;
+  }
+
+  #section-inverted-world .section-texts h2 {
+    font-size: 30px;
+    align-self: center;
+  }
+
+  #section-inverted-world img {
+    margin-top: 30px;
+    width: 90%;
+  }
+}
+
 #section-stranger-things-trailer .section-texts {
   width: 50%;
   text-align: right;
@@ -267,6 +290,48 @@ section {
       var(--primary-color-contrast));
   border-image-slice: 10;
 }
+
+@media (max-width: 768px) {
+
+  #section-stranger-things-trailer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #section-stranger-things-trailer .section-texts {
+    width: 50%;
+    text-align: center;
+  }
+  
+  #section-stranger-things-trailer .section-texts h2 {
+    max-width: 100px;
+   
+  }
+  
+  #section-stranger-things-trailer .video-frame {
+    background-color: var(--primary-color);
+    width: 450px;
+    height: 300px;
+    margin-left: 10px;
+  }
+  
+  #section-stranger-things-trailer .video-frame iframe {
+    width: 450px;
+    height: 300px;
+    position: relative;
+    bottom: 24px;
+    left: 24px;
+    border: 2px solid;
+    border-image: linear-gradient(var(--primary-color),
+        var(--primary-color-contrast));
+    border-image-slice: 10;
+  }
+
+}
+
+
+
+
 
 #section-stranger-things-gallery {
   width: 100%;
@@ -375,7 +440,7 @@ section {
   color: var(--field-background-color);
 }
 
-footer{
+footer {
   padding: 60px 0;
   background-color: var(--footer-background-color);
   text-align: center;
@@ -386,13 +451,13 @@ footer{
   overflow: hidden;
 }
 
-footer p{
+footer p {
   max-width: 700px;
   margin-bottom: 24px;
 }
 
 footer::before,
-footer::after{
+footer::after {
   content: "";
   width: 200px;
   height: 200px;
@@ -402,12 +467,12 @@ footer::after{
   bottom: -30px;
 }
 
-footer::before{
+footer::before {
   left: -50px;
   transform: rotateZ(-10deg);
 }
 
-footer::after{
+footer::after {
   right: -50px;
   transform: rotateZ(10deg);
 }
