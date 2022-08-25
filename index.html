@@ -19,8 +19,8 @@
     <div class="header-content">
       <img src="assets/images/banner/logo.svg" alt="Imagem principal" class="invert-element">
       <p class="invert-element" role="text">
-        Uma jornada para quem não tem medo do desconhecido. O caminho para o
-        Mundo Invertido é incerto, repleto de obstáculos e perigos. Porém, a
+        Uma jornada para quem não tem medo do desconhecido. O caminho para
+        o Mundo Invertido é incerto, repleto de obstáculos e perigos. Porém, a
         recompensa é grande: salvar Hawkings e o mundo todo das guarras de
         Vecna. Você está preparado? Então clique no botão abaixo para entrar
         no Mundo Invertido!
@@ -72,13 +72,13 @@
       <div class="container section-text">
         <h2>A segunda série mais assistida da Netflix!</h2>
         <ul class="gallery-container" role="gallery">
-          <li class="gallery-imagine invert-element">
+          <li class="gallery-image invert-element">
             <img src="assets/images/content/serie-image-01.png" alt="Imagem do Vecna">
           </li>
-          <li class="gallery-imagine invert-element">
+          <li class="gallery-image  invert-element">
             <img src="assets/images/content/serie-image-02.png" alt="Imagem ilustrativa do personagens">
           </li>
-          <li class="gallery-imagine invert-element">
+          <li class="gallery-image  invert-element">
             <img src="assets/images/content/serie-image-03.png" alt="Imagem da Eleven assustada">
           </li>
         </ul>
@@ -87,6 +87,15 @@
     </section>
 
     <section id="section-form" class="container">
+
+      <h2>O Clube de Dungeons & Dragons</h2>
+      <p>
+        Para deter Vecna, os heróis de Stranger Things também precisam de
+        você! O clube D&D mais famoso de Hawkingsestá com vagas abertas
+        para sua próxima aventura. Se você é determinado, gosta de desafios e
+        não tem medo de rodar o D20, chegou a hora de se inscrever para fazer
+         parte da nova campanha.  
+      </p>
       <!-- Trecho com descrição e formulário  -->
       <div class="form-content">
         <h3>Entre para o clube do D&D e tenha experiências de <span>outro mundo</span></h3>
@@ -98,7 +107,7 @@
             <input type="email" name="email" id="txtEmail"> 
             <label for="txtLevel">Level</label>
             <input type="text" name="level" id="txtLevel">
-            <label for="txtCharacter">E-mail</label>
+            <label for="txtCharacter">Personagem</label>
             <textarea name="character" cols="30" rows="10" id="txtCharacter"></textarea>
             <button type="button" id="btnSubscribe">Me inscrever!</button>
           </form>
@@ -109,11 +118,38 @@
 
   <footer>
     <!-- Rodapé com trecho de texto e o logo da DIO._  -->
-    <p>Projeto construído para fins educacionais, para praticar
-      conceitos de HTML, CSS e Javascript.
+    <p>Projeto construído para fins educacionais pela DIO, visando 
+      praticar conceitos de HTML, CSS e Javascript.
+      Todo o conteúdo fornecido no serviço Netflix 
+      está protegido por direitos autorais e não tem nenhuma ligação real com o conteúdo desse site.
     </p>
-    <img src="" alt="">
+    <div class="img-footer">
+      <img src="/assets/images/footer/logo.svg" alt="">
+      <img src="" alt="">
+    </div>
   </footer>
+
+  <script type="module" src="assets/js/main.js"></script>
+  <script>
+    window.addEventListener('click', function(){
+      const audio = document.getElementById('music');
+      audio.play();
+      audio.volume = 0.2;
+    })
+
+    function switchTheme(){
+      document.body.classList.toggle('dark-theme');
+      document.body.classList.toggle('light-theme');
+
+      const theme = document.body.classList[0];
+      const music = theme === 'light-theme' ? 'normal-world.mpeg' : 'inverted-world.mpeg'
+      
+      const audio = document.getElementById('music');
+      audio.src = `assets/music/${music}`;
+      audio.play();
+      audio.volume = 0.2;
+    }
+  </script>
 </body>
 
 </html>
